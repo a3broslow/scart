@@ -8,13 +8,13 @@ class CartController < ApplicationController
   		session[:cart] ={}
   		cart = session[:cart]
  end
- #if the product has already been added to the cart, increment the value else set the same
+ #if the product has already been added to the cart, increment the value else set the value to 1
  if cart[id] then
  	cart[id] = cart[id] + 1
  else 
  	cart[id] = 1
 end
-rediret_to :action => :index
+redirect_to :action => :index
 end #end_add_method
 
 def clearCart
